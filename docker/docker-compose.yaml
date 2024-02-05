@@ -14,8 +14,12 @@ services:
     volumes:
       - ../:/workspace
       - /mnt/d/datasets:/datasets
+    ports:
+      - 8888:8888
     ulimits:
       memlock: -1
       stack: 67108864
     shm_size: 16gb
     working_dir: /workspace
+    command: "jupyter notebook --ip 0.0.0.0 --allow-root"
+  
